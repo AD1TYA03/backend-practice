@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{page}}</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <nav class="main-header__nav">
+            <ul class="main-header__item-list">
+                <li class="main-header__item"><a class="active" href="/">Shop</a></li>
+                <li class="main-header__item"><a href="/admin/add-product">Add Product</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="product-container">
+        {{#if check}}
+        <div class="grid">
+            {{#each prods}}
+            <article class="card product-item">
+                <header class="card__header">
+                    <h1 class="product__title">{{this.title}}</h1>
+                </header>
+                <div class="card__image">
+                    <img src="https://images.unsplash.com/photo-1602731465531-14015e83a6de?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80"
+                        alt="ppic">
+                 
+                </div>
+                <div class="card__content">
+                    <h2 class="product__price">$19.19</h2>
+                    <p class="product__discription">A good fucking book</p>
+                </div>
+                <div class="card__action">
+                    <button class="btn">Add to cart</button>
+                </div>
+            </article>
+            {{/each}}
+        </div>
+        {{else}}
+        <h1>No Product Found</h1>
+
+        {{/if}}
+
+    </main>
+    <script src="/javascript/add-product.js"></script>
+</body>
+
+</html>
